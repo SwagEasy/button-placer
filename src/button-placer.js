@@ -1,6 +1,7 @@
 function ButtonPlacer(raters) {
   this.raters = raters;
   this.rates = {};
+
   var counter = 1;
   $('*').each(function () {
     if (!this.id) {
@@ -11,6 +12,7 @@ function ButtonPlacer(raters) {
 }
 
 ButtonPlacer.DEFAULT_BUTTONS_COUNT = 5;
+ButtonPlacer.MIN_RATING = 200;
 
 ButtonPlacer.prototype.getTopElements = function (count) {
   var self = this;
@@ -26,6 +28,9 @@ ButtonPlacer.prototype.getTopElements = function (count) {
   }), count || ButtonPlacer.DEFAULT_BUTTONS_COUNT);
 };
 
-ButtonPlacer.prototype.placeButton = function () {
-  
+ButtonPlacer.prototype.placeButton = function (siblings) {
+  var self = this;
+  $.each(siblings, function () {
+    self.getButtonClone().insertBefore(this);
+  });
 };
