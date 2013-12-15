@@ -1,0 +1,22 @@
+{
+  "name": "button-placer",
+  "version": "0.0.0",
+  "description": "Algorithm for smart placement of a button on a web page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SwagEasy/button-placer.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/SwagEasy/button-placer/issues"
+  },
+  "dependencies": {
+    "bogart": "~0.5.12",
+    "phantomjs": "~1.9.2-5"
+  }
+}
