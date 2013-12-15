@@ -46,6 +46,7 @@ ContrastRater.prototype.rate = function (el) {
       norm = this.options.maxContrast - this.options.minContrast,
       parentBg, diff = 0;
 
+  if (el.is('[type="text"]') || (el.is(':input') && !el.attr('type'))) return 0;
   if (background.a === 0) return 0;
 
   while (parentNode &&

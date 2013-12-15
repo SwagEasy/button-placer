@@ -1,6 +1,6 @@
 $(window).load(function () {
 
-  var button = $('<button style="background-color: red; color: #fff;">SwagEasy MAN!</button>');
+  var button = $('<button style="background-color: red; color: #fff; border: 1px solid red;">SwagEasy MAN!</button>');
 
   var placer = new ButtonPlacer([
     new SizeRater({
@@ -9,12 +9,12 @@ $(window).load(function () {
       minHeight: 0.01,
       maxHeight: 0.05
     }),
-    new ContrastRater({
-      minContrast: 40,
-      maxContrast: 500,
-      parentColorType: 'background-color',
-      childColorType: 'color'
-    }),
+    // new ContrastRater({
+    //   minContrast: 40,
+    //   maxContrast: 500,
+    //   parentColorType: 'background-color',
+    //   childColorType: 'color'
+    // }),
     new ContrastRater({
       minContrast: 40,
       maxContrast: 500,
