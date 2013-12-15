@@ -21,7 +21,7 @@ ButtonPlacer.prototype.getTopElements = function (count) {
     var el = this;
     self.rates[el.id] = self.rates[el.id] || 0;
     $.each(this.raters, function () {
-      self.rates[el.id] += this.rate(el);
+      self.rates[el.id] += this.rate($(el));
     });
   });
   _.first(_.sortBy(_.pairs(self.rates), function (el) {
