@@ -1,6 +1,6 @@
 $(window).load(function () {
 
-  var button = $('<button style="background-color: red; color: #fff; border: 1px solid red;">SwagEasy MAN!</button>');
+  var button = $('<button style="background-color: red !important; color: #fff !important; border: 1px solid red;">SwagEasy MAN!</button>');
 
   var placer = window.placer = new ButtonPlacer([
     new SizeRater({

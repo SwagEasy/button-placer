@@ -5,7 +5,7 @@ function PriorityRater(options) {
 
 PriorityRater.DEFAULT_PRIORITY_MAP = {
   'textarea': 70,
-  'input[type=text]': 70,
+  'input[type=text]': 50,
   'input[type=submit]': 90
 }
 
