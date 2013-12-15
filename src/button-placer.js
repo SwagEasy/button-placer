@@ -1,4 +1,5 @@
-function ButtonPlacer(raters) {
+function ButtonPlacer(raters, button) {
+  this.button = button;
   this.raters = raters;
   this.rates = {};
 
@@ -31,6 +32,6 @@ ButtonPlacer.prototype.getTopElements = function (count) {
 ButtonPlacer.prototype.placeButton = function (siblings) {
   var self = this;
   $.each(siblings, function () {
-    self.getButtonClone().insertBefore(this);
+    self.button.clone().insertBefore(this);
   });
 };
