@@ -13,13 +13,13 @@ SizeRater.prototype.rate = function (el) {
       height = el.height(),
       normElWidth = width - this.minWidth,
       normElHeight = height - this.minHeight,
+      normElArea = normElHeight * normElWidth,
       normWidth = this.maxWidth - this.minWidth,
-      normHeight = this.maxHeight - this.minHeight;
+      normHeight = this.maxHeight - this.minHeight,
+      normArea = normWidth * normHeight;
 
-  if (normElHeight < 0) normElHeight = 0;
-  if (normElWidth < 0) normElWidth = 0;
-  if (normElHeight > normHeight) normElHeight = normHeight;
-  if (normElWidth > normWidth) normElWidth = normWidth;
+  if (normElArea < 0) normElArea = 0;
+  if (normElArea > normArea) normElArea = normArea;
 
-  return ((normElHeight / normHeight) * 100 + (normElWidth / normWidth) * 100) / 2;
+  return (normElArea / normArea) * 100;
 };

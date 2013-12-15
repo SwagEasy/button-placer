@@ -28,7 +28,8 @@ ButtonPlacer.prototype.getTargetElements = function (node) {
     }
   }
   getTextNodes(node);
-  return nodes;
+  var inputs = $(':input').toArray();
+  return nodes.concat(inputs);
 };
 
 ButtonPlacer.prototype.getTopElements = function (count) {
