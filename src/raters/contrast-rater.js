@@ -7,7 +7,8 @@ ContrastRater.prototype.hexToRgb = function (hex) {
   return result ? {
     r: parseInt(result[1], 16),
     g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
+    b: parseInt(result[3], 16),
+    a: 1
   } : null;
 };
 
@@ -24,7 +25,7 @@ ContrastRater.prototype.convertToRgb = function (color) {
       r: parseInt(color[0], 10),
       g: parseInt(color[1], 10),
       b: parseInt(color[2], 10),
-      a: parseInt(color[3], 10)
+      a: parseInt(color[3], 10) || 1
     };
   }
   return color;
@@ -32,7 +33,7 @@ ContrastRater.prototype.convertToRgb = function (color) {
 
 ContrastRater.prototype.rate = function (el) {
   var parentNode = el.parent(),
-      background = this.convertToRgb(el.css('background-color')),
+      background = this.convertToRgb(el.css('color')),
       norm = this.options.maxContrast - this.options.minContrast,
       parentBg, diff = 0;
 
