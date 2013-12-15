@@ -11,7 +11,14 @@ $(window).load(function () {
       maxContrast: 500,
       parentColorType: 'background-color',
       childColorType: 'color'
-    })
+    }),
+    new ContrastRater({
+      minContrast: 40,
+      maxContrast: 500,
+      parentColorType: 'background-color',
+      childColorType: 'background-color'
+    }),
+    new VisibilityRater()
   ]);
 
   console.log(placer.getTopElements());

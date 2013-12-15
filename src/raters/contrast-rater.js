@@ -33,7 +33,8 @@ ContrastRater.prototype.convertToRgb = function (color) {
 
 ContrastRater.prototype.rate = function (el) {
   var parentNode = el.parent(),
-      background = this.convertToRgb(el.css('color')),
+      background = this.convertToRgb(el.css(this.options.childColorType)),
+      parentColorType = this.options.parentColorType,
       norm = this.options.maxContrast - this.options.minContrast,
       parentBg, diff = 0;
 
@@ -41,9 +42,9 @@ ContrastRater.prototype.rate = function (el) {
 
   while (parentNode &&
          (parentNode = parentNode.parent()) &&
-         _.isEqual(this.convertToRgb(parentNode.css('background-color')), background)) {}
+         _.isEqual(this.convertToRgb(parentNode.css(parentColorType)), background)) {}
 
-  parentBg = this.convertToRgb(parentNode.css('background-color'));
+  parentBg = this.convertToRgb(parentNode.css(parentColorType));
   _.each(_.keys(parentBg), function (k) {
     diff += Math.abs(parentBg[k] - background[k]);
   });
