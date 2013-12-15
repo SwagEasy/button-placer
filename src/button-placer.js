@@ -41,8 +41,8 @@ ButtonPlacer.prototype.getTopElements = function (count) {
       self.rates[el.id] += this.rate($(el));
     });
   });
-  _.first(_.sortBy(_.pairs(self.rates), function (el) {
-    return el.value;
+  return _.first(_.pairs(this.rates).sort(function (a, b) {
+    return b[1] - a[1];
   }), count || ButtonPlacer.DEFAULT_BUTTONS_COUNT);
 };
 
