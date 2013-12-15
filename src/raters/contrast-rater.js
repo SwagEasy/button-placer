@@ -17,6 +17,14 @@ ContrastRater.prototype.isHex = function (color) {
 };
 
 ContrastRater.prototype.convertToRgb = function (color) {
+  if (!color) {
+    return {
+      r: 0,
+      g: 0,
+      b: 0,
+      a: 0
+    };
+  }
   if (this.isHex(color)) {
     return this.hexToRgb(color);
   } else if (typeof color === 'string') {
@@ -41,8 +49,8 @@ ContrastRater.prototype.rate = function (el) {
   if (background.a === 0) return 0;
 
   while (parentNode &&
-         (parentNode = parentNode.parent()) &&
-         _.isEqual(this.convertToRgb(parentNode.css(parentColorType)), background)) {}
+        (parentNode = parentNode.parent()) &&
+        _.isEqual(this.convertToRgb(parentNode.css(parentColorType)), background)) {}
 
   parentBg = this.convertToRgb(parentNode.css(parentColorType));
   _.each(_.keys(parentBg), function (k) {
