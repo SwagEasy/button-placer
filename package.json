@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "bogart": "~0.5.12",
-    "phantomjs": "~1.9.2-5"
+    "phantomjs": "~1.9.2-5",
+    "diff": "~1.0.7"
   }
 }
