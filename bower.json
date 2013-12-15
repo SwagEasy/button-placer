@@ -1,0 +1,22 @@
+{
+  "name": "button-placer",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mgechev/button-placer",
+  "authors": [
+    "Minko Gechev <mgechev@gmail.com>",
+    "Genadi Samokovarov <gsamokovarov@gmail.com>"
+  ],
+  "license": "BSD-2-Clause",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.10.2",
+    "underscore": "~1.5.2"
+  }
+}
