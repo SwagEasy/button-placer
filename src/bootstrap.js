@@ -2,7 +2,7 @@ $(window).load(function () {
 
   var button = $('<button style="background-color: red; color: #fff; border: 1px solid red;">SwagEasy MAN!</button>');
 
-  var placer = new ButtonPlacer([
+  var placer = window.placer = new ButtonPlacer([
     new SizeRater({
       minWidth: 0.01,
       maxWidth: 0.05,
@@ -21,6 +21,7 @@ $(window).load(function () {
       parentColorType: 'background-color',
       childColorType: 'background-color'
     }),
+    new PriorityRater(),
     new VisibilityRater()
   ], button);
 
