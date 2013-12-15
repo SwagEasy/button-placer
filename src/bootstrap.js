@@ -5,6 +5,12 @@ $(window).load(function () {
       maxWidth: 0.05,
       minHeight: 0.01,
       maxHeight: 0.05
+    }),
+    new ContrastRater({
+      minContrast: 40,
+      maxContrast: 500,
+      parentColorType: 'background-color',
+      childColorType: 'color'
     })
   ]);
 
