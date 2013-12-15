@@ -1,7 +1,7 @@
 function SizeRater(options) {
   this.options = options;
   var winWidth = $(window).width(),
-      winHeight = $(window).height(),
+      winHeight = $(window).height();
   this.maxWidth = options.maxWidth * winWidth,
   this.maxHeight = options.maxHeight * winHeight,
   this.minWidth = options.minWidth * winWidth,

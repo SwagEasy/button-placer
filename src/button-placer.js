@@ -15,12 +15,28 @@ function ButtonPlacer(raters, button) {
 ButtonPlacer.DEFAULT_BUTTONS_COUNT = 5;
 ButtonPlacer.MIN_RATING = 200;
 
+ButtonPlacer.prototype.getTargetElements = function (node) {
+  var nodes = [];
+
+  function getTextNodes(node) {
+    if (node.nodeType == 3) {
+      nodes.push(node.parentNode);
+    } else {
+      for (var i = 0, len = node.childNodes.length; i < len; ++i) {
+        getTextNodes(node.childNodes[i]);
+      }
+    }
+  }
+  getTextNodes(node);
+  return nodes;
+};
+
 ButtonPlacer.prototype.getTopElements = function (count) {
   var self = this;
-  $('*').each(function () {
+  $.each(this.getTargetElements(document) ,function () {
     var el = this;
     self.rates[el.id] = self.rates[el.id] || 0;
-    $.each(this.raters, function () {
+    $.each(self.raters, function () {
       self.rates[el.id] += this.rate($(el));
     });
   });
